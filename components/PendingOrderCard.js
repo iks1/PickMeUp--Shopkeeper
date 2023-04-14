@@ -56,6 +56,7 @@ const PendingOrderCard = props => {
 
 const styles = StyleSheet.create({
     container: {
+        marginBottom: 16,
         backgroundColor: "#FFFFFF",
         display: 'flex',
         width: "95%",

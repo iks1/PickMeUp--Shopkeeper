@@ -1,12 +1,12 @@
 import React,{useState} from "react";
 import { ScrollView, View, Text, StyleSheet} from "react-native";
-import PendingOrderCard from "../components/PendingOrderCard";
+import ReadyOrderCard from "../components/ReadyOrderCard";
 import SearchBar from '../components/SearchBar';
 import NavBar from '../components/NavBar';
 import Header from "../components/header";
 import ToggleSwitch from "toggle-switch-react-native";
 
-const PendingHomePage=()=>{
+const ReadyHomePage=()=>{
 
     const [open, setOpen] = useState(true);
     const [label, setLabel] = useState("Open");
@@ -41,11 +41,11 @@ const PendingHomePage=()=>{
 
                     <View style={styles.tabs}>
                         <ScrollView horizontal={true}>
-                            <View style={styles.tab1}>
-                                <Text style={styles.tabtext1}>Pending Orders</Text>
-                            </View>
                             <View style={styles.tab2}>
-                                <Text style={styles.tabtext2}>Ready Orders</Text>
+                                <Text style={styles.tabtext2}>Pending Orders</Text>
+                            </View>
+                            <View style={styles.tab1}>
+                                <Text style={styles.tabtext1}>Ready Orders</Text>
                             </View>
                             <View style={styles.tab2}>
                                 <Text style={styles.tabtext2}>Completed Orders</Text>
@@ -55,9 +55,9 @@ const PendingHomePage=()=>{
 
                     <View style={styles.cards}>
                         
-                    <PendingOrderCard orderNumber="1002" orderTime="17" bill="1000" list={[{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:0,num:2,item:"pizza",price:200}]}/>
-                    <PendingOrderCard orderNumber="1002" orderTime="17" bill="1000" list={[{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:0,num:2,item:"pizza",price:200}]}/>
-                    <PendingOrderCard orderNumber="1002" orderTime="17" bill="1000" list={[{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:0,num:2,item:"pizza",price:200}]}/>
+                    <ReadyOrderCard orderNumber="1002" orderTime="17" bill="1000" list={[{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:0,num:2,item:"pizza",price:200}]}/>
+                    <ReadyOrderCard orderNumber="1002" orderTime="17" bill="1000" list={[{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:0,num:2,item:"pizza",price:200}]}/>
+                    {/* <PendingOrderCard orderNumber="1002" orderTime="17" bill="1000" list={[{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:0,num:2,item:"pizza",price:200}]}/> */}
                     
                     </View>
 
@@ -73,7 +73,7 @@ const PendingHomePage=()=>{
     );
 }
 
-export default PendingHomePage
+export default ReadyHomePage
 
 const styles = StyleSheet.create({
     main:{
