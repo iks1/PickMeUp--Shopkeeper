@@ -5,7 +5,7 @@ import Line from '../assets/horizontalLine.svg';
 import Veg from '../assets/veg.svg';
 import NonVeg from '../assets/nonveg.svg';
 
-const PendingOrderCard = props => {
+const ReadyOrderCard = props => {
     const handleApply = () => {
         ;
     };
@@ -56,6 +56,7 @@ const PendingOrderCard = props => {
 
 const styles = StyleSheet.create({
     container: {
+        marginBottom: 16,
         backgroundColor: "#FFFFFF",
         display: 'flex',
         width: "95%",
@@ -129,5 +130,4 @@ const styles = StyleSheet.create({
     }
 });
   
-
-export default PendingOrderCard;
+export default ReadyOrderCard;
