@@ -24,14 +24,17 @@ const Last30Insights=()=>{
                     
                     <View style={styles.tabs}>
                         <ScrollView horizontal={true}>
-                            <View style={styles.tab2}>
+                            <View style={styles.tab1}>
                                 <Text style={styles.tabtext2}>Today</Text>
                             </View>
                             <View style={styles.tab2}>
                                 <Text style={styles.tabtext2}>Last 7 days</Text>
                             </View>
-                            <View style={styles.tab1}>
+                            <View style={styles.tab3}>
                                 <Text style={styles.tabtext1}>Last 30 days</Text>
+                            </View>
+                            <View style={styles.tab4}>
+                                <Text style={styles.tabtext2}>Select date</Text>
                             </View>
                         </ScrollView>
                     </View>
@@ -97,13 +100,11 @@ const styles = StyleSheet.create({
     },
     tabs:{
         marginTop: 32,
-        marginLeft: "4%",
-        marginRight: "4%",
         flexDirection:'row',
     },
-    tab1:{
+    tab3:{
         height: 32,
-        width: 134,
+        width: 113,
         backgroundColor: "#5736B5",
         borderRadius: 16,
         marginLeft: 4,
@@ -116,9 +117,33 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: 500,
     },
+    tab1:{
+        height: 32,
+        width: 71,
+        backgroundColor: "#EEEDFA",
+        borderRadius: 16,
+        borderColor: "#D7D2E9",
+        borderWidth: 1,
+        marginLeft: 4,
+        marginRight: 4,
+        alignItems: "center",
+        justifyContent: "center",
+    },
     tab2:{
         height: 32,
-        width: 134,
+        width: 104,
+        backgroundColor: "#EEEDFA",
+        borderRadius: 16,
+        borderColor: "#D7D2E9",
+        borderWidth: 1,
+        marginLeft: 4,
+        marginRight: 4,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    tab4:{
+        height: 32,
+        width: 103,
         backgroundColor: "#EEEDFA",
         borderRadius: 16,
         borderColor: "#D7D2E9",

@@ -5,18 +5,12 @@ import InputField from "../components/InputField";
 import Google from "../components/Google";
 
 const SignUp = () => {
-    const handleClick = () => {
-        ;
-    };
-    const handleReset = () => {
-        ;
-    };
-
+    
     return (
         <View style={styles.main}>
             <View style={styles.container}>
                 <View style={styles.arrow}>
-                    <TouchableOpacity onPress={handleClick}>
+                    <TouchableOpacity>
                         <Arrow/>
                     </TouchableOpacity>
                 </View>
@@ -24,23 +18,28 @@ const SignUp = () => {
                     <InputField text="Shop ID"/>
                     <InputField text="Email ID"/>
                     <InputField text="Password"/>
-                    <View style={styles.password}>
-                        <Text style={styles.p1}>Forgot Password or Shop ID?</Text>
-                        <TouchableOpacity onPress={handleReset}>
-                            <Text style={styles.p2}> Click here</Text>
-                        </TouchableOpacity>
-                    </View>
                 </View>
-                <View style={styles.input2}>
-                    
+                <View style={styles.password}>
+                    <Text style={styles.p1}>Forgot Password or Shop ID?</Text>
+                    <TouchableOpacity>
+                        <Text style={styles.p2}> Click here</Text>
+                    </TouchableOpacity>
+                </View>
+                
+                <View style={styles.input2}>   
                     <RegisterButton text="Login"/>
                     <Text style={styles.or}>or</Text>
                     <Google/>
                 </View>
+
                 <View style={styles.text}>
                     <Text style={styles.texts}>
-                        By tapping Register, or continue with Outlook or Google, you agree to our Terms of Use and Privacy Policy.
+                        By tapping Register, or continue with Outlook or Google, you agree to our
+                        <Text style={styles.boldText}> Terms of Use </Text> 
+                        and  
+                        <Text style={styles.boldText}> Privacy Policy</Text>                  
                     </Text>
+                    
                 </View>
            </View>
         </View>
@@ -64,27 +63,29 @@ const styles = StyleSheet.create({
         flexDirection:'column',
     },
     arrow: {
-        paddingLeft: 28,
-        paddingTop: 28,
+        paddingLeft: 33,
+        paddingTop: 33,
     },
     input: {
-        marginTop: 16,
+        marginTop: 24,
         width: "100%",
-        height: 230,
+        height: 185,
         flexDirection:'column',
         alignItems:'center',
-        justifyContent:'space-evenly',
+        justifyContent:'space-between',
     },
     input2: {
-        marginTop: 8,
-        height: 120,
+        marginTop: 24,
+        height: 114,
         flexDirection:'column',
         alignItems:'center',
-        justifyContent:'space-evenly',
+        justifyContent:'space-between',
     },
     password: {
-        marginTop: 8,
+        marginTop: 16,
+        height: 19,
         flexDirection:'row',
+        alignSelf: 'center',
         alignItems:'center',
     },
     p1: {
@@ -102,17 +103,21 @@ const styles = StyleSheet.create({
         color: "#6F6F6F",
     },
     text: {
-        marginTop: 4,
-        
+        marginTop: 16,
+        height: 36,
         width: "91%",
         alignSelf: "center",
         alignItems: "center",
+        flexDirection: 'row',
+    },
+    boldText: {
+        fontWeight: 500,
     },
     texts: {
         textAlign: "center",
         color: "#6F6F6F",
         fontSize: 12,
-        fontWeight: 500,
+        fontWeight: 400,
     }
 });
 

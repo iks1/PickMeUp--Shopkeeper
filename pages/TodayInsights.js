@@ -30,8 +30,11 @@ const TodayInsights=()=>{
                             <View style={styles.tab2}>
                                 <Text style={styles.tabtext2}>Last 7 days</Text>
                             </View>
-                            <View style={styles.tab2}>
+                            <View style={styles.tab3}>
                                 <Text style={styles.tabtext2}>Last 30 days</Text>
+                            </View>
+                            <View style={styles.tab4}>
+                                <Text style={styles.tabtext2}>Select date</Text>
                             </View>
                         </ScrollView>
                     </View>
@@ -97,13 +100,11 @@ const styles = StyleSheet.create({
     },
     tabs:{
         marginTop: 32,
-        marginLeft: "4%",
-        marginRight: "4%",
         flexDirection:'row',
     },
     tab1:{
         height: 32,
-        width: 134,
+        width: 71,
         backgroundColor: "#5736B5",
         borderRadius: 16,
         marginLeft: 4,
@@ -118,7 +119,31 @@ const styles = StyleSheet.create({
     },
     tab2:{
         height: 32,
-        width: 134,
+        width: 104,
+        backgroundColor: "#EEEDFA",
+        borderRadius: 16,
+        borderColor: "#D7D2E9",
+        borderWidth: 1,
+        marginLeft: 4,
+        marginRight: 4,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    tab3:{
+        height: 32,
+        width: 113,
+        backgroundColor: "#EEEDFA",
+        borderRadius: 16,
+        borderColor: "#D7D2E9",
+        borderWidth: 1,
+        marginLeft: 4,
+        marginRight: 4,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    tab4:{
+        height: 32,
+        width: 103,
         backgroundColor: "#EEEDFA",
         borderRadius: 16,
         borderColor: "#D7D2E9",
