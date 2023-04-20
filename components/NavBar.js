@@ -8,86 +8,95 @@ import HomeIconActive from '../assets/homeNavActive.svg';
 import MenuIconActive from '../assets/menuNavActive.svg';
 import InsightsIconActive from '../assets/insightsNavActive.svg';
 import UpdatesIconActive from '../assets/updatesNavActive.svg';
-  
-const NavBar = () => {
-
-    const [activeTab, setActiveTab] = useState('Home');
-  
-    const onTabPress = (tabName) => {
-      setActiveTab(tabName);
-    }
+import { useNavigation } from "@react-navigation/native";
+const NavBar = (props) => {
+    const navigation = useNavigation();
   
     return (
-
-        <View style={styles.navBar}>
-
-            <TouchableOpacity onPress={() => onTabPress('Home')} style={styles.tab}>
-
-                {activeTab === 'Home' ? <HomeIconActive /> : <HomeIcon />}
-
-                <Text style={activeTab === 'Home' ? styles.activeText : styles.text}>Home</Text>
-
-            </TouchableOpacity>
-    
-            <TouchableOpacity onPress={() => onTabPress('Menu')} style={styles.tab}>
-
-                {activeTab === 'Menu' ? <MenuIconActive /> : <MenuIcon />}
-
-                <Text style={activeTab === 'Menu' ? styles.activeText : styles.text}>Menu</Text>
-
-            </TouchableOpacity>
-    
-            <TouchableOpacity onPress={() => onTabPress('Insights')} style={styles.tab}>
-
-                {activeTab === 'Insights' ? <InsightsIconActive /> : <InsightsIcon />}
-
-                <Text style={activeTab === 'Insights' ? styles.activeText : styles.text}>Insights</Text>
-
-            </TouchableOpacity>
-    
-            <TouchableOpacity onPress={() => onTabPress('Updates')} style={styles.tab}>
-                
-                {activeTab === 'Updates' ? (<UpdatesIconActive />) : (<UpdatesIcon />)}
-
-                <Text style={activeTab === 'Updates'? styles.activeText : styles.text}>Updates</Text>
-
-            </TouchableOpacity>
-      
-
-        </View>
-    );
-};
+      <View style={[styles.navBar]}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Pending");
+          }}
+          style={styles.tab}
+        >
+          {props.active === "Home" ? <HomeIconActive /> : <HomeIcon />}
   
-const styles = StyleSheet.create({
+          <Text style={props.active === "Home" ? styles.activeText : styles.text}>
+            Home
+          </Text>
+        </TouchableOpacity>
+  
+        <TouchableOpacity
+          
+          style={styles.tab}
+        >
+          {props.active === "Menu" ? <MenuIconActive /> : <MenuIcon />}
+  
+          <Text style={props.active === "Menu" ? styles.activeText : styles.text}>
+            Menu
+          </Text>
+        </TouchableOpacity>
+  
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Insights");
+          }}
+          style={styles.tab}
+        >
+          {props.active === "Insights" ? <InsightsIconActive /> : <InsightsIcon />}
+  
+          <Text style={props.active === "Insights" ? styles.activeText : styles.text}>
+            Insights
+          </Text>
+        </TouchableOpacity>
+  
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("Updates");
+          }}
+          style={styles.tab}
+        >
+          {props.active === "Updates" ? <UpdatesIconActive /> : <UpdatesIcon />}
+  
+          <Text style={props.active === "Updates" ? styles.activeText : styles.text}>
+            Updates
+          </Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
+  
+  const styles = StyleSheet.create({
     navBar: {
-      flexDirection: 'row',
-      position: 'absolute',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      backgroundColor: '#FFFFFF',
+      flexDirection: "row",
+      position: "absolute",
+      justifyContent: "space-between",
+      alignItems: "center",
+      backgroundColor: "#FFFFFF",
       borderTopWidth: 1,
-      borderTopColor: '#eee',
-      width: '100%',
+      borderTopColor: "#eee",
+      width: "100%",
       height: 64,
       bottom: 0,
     },
     tab: {
       flex: 1,
-      alignItems: 'center',
+      alignItems: "center",
     },
     text: {
-        fontSize: 12,
-        fontWeight: 500,
-        marginTop: 4,
-        color: '#999999',
+      fontSize: 12,
+      fontWeight: 500,
+      marginTop: 4,
+      color: "#999999",
     },
     activeText: {
-        fontSize: 12,
-        fontWeight: 500,
-        marginTop: 4,
-        color: '#5932E6',
+      fontSize: 12,
+      fontWeight: 500,
+      marginTop: 4,
+      color: "#5932E6",
     },
-});
+  });
   
-export default NavBar;
-
+  export default NavBar;
+  

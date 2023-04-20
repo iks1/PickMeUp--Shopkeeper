@@ -1,14 +1,14 @@
 import React,{useState} from "react";
-import { ScrollView, View, Text, StyleSheet} from "react-native";
+import { ScrollView, View, Text, StyleSheet, TouchableOpacity} from "react-native";
 import InsightsCard from "../components/InsightsCard";
 import NavBar from '../components/NavBar';
 import Header from "../components/header";
 import ReviewCard from "../components/ReviewCard";
 import Image from '../assets/shopImage.png';
 import SellingItemCard from "../components/SellingItemCard";
-
+import { useNavigation } from "@react-navigation/native";
 const Last30Insights=()=>{
-
+    const navigation = useNavigation();
     const [open, setOpen] = useState(true);
     const [label, setLabel] = useState("Open");
 
@@ -24,15 +24,15 @@ const Last30Insights=()=>{
                     
                     <View style={styles.tabs}>
                         <ScrollView horizontal={true}>
-                            <View style={styles.tab2}>
+                            <TouchableOpacity style={styles.tab2} onPress={()=>{navigation.navigate("Insights")}}>
                                 <Text style={styles.tabtext2}>Today</Text>
-                            </View>
-                            <View style={styles.tab2}>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.tab2} onPress={()=>{navigation.navigate("Insights7")}}>
                                 <Text style={styles.tabtext2}>Last 7 days</Text>
-                            </View>
-                            <View style={styles.tab1}>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.tab1} onPress={()=>{navigation.navigate("Insights30")}}>
                                 <Text style={styles.tabtext1}>Last 30 days</Text>
-                            </View>
+                            </TouchableOpacity>
                         </ScrollView>
                     </View>
 
@@ -87,6 +87,8 @@ const styles = StyleSheet.create({
     up:{
         height:108,
         width:"100%",
+        flexDirection:"column",
+        alignItems:"center"
     },
     down:{
         height:"100%",

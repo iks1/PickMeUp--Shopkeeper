@@ -1,13 +1,17 @@
 import Profile from './../assets/profile.svg'
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
+import { useNavigation } from "@react-navigation/native";
 
 const header = (props)=>{
+  const navigation = useNavigation();
     return (
         <View style={styles.head}>
                     <Text style={styles.headTex}>
                         {props.text}
                     </Text>
-                    <Profile/>
+                    <TouchableOpacity onPress={()=>{navigation.navigate("Profile");}}>
+                        <Profile/>
+                    </TouchableOpacity>
         </View>
     )
 }
@@ -17,11 +21,10 @@ export default header
 const styles = StyleSheet.create({
     head:{
         marginTop:48,
-        marginLeft:24,
-        marginRight:24,
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
+        width:'90%'
     },
     headTex:{
         fontSize:20,

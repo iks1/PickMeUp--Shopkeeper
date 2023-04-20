@@ -12,14 +12,15 @@ import Help from "../assets/help.svg";
 import Complaint from "../assets/complaint.svg";
 import RightArrow from "../assets/rightArrow.svg";
 import NavBar from '../components/NavBar';
+import { useNavigation } from "@react-navigation/native";
 
 const Profile=()=>{
-
+    const navigation = useNavigation();
     return (
         <View style={styles.mainContainer}>
             <ScrollView  style={styles.main}>
                 <View style={styles.up}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>{navigation.goBack();}}>
                         <Arrow />
                     </TouchableOpacity>
                     <TouchableOpacity>
@@ -76,7 +77,7 @@ const Profile=()=>{
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <TouchableOpacity style={styles.button}>
+                    <TouchableOpacity style={styles.button}  onPress={()=>{navigation.navigate("GetStarted");}}>
                         <View>
                             <Text style={styles.buttonText}>
                                 Logout
@@ -86,7 +87,7 @@ const Profile=()=>{
                 </View>         
             </ScrollView>   
             <View style={styles.navbar}>
-                    <NavBar />
+                    <NavBar active="Home"/>
             </View>
         </View>
     );
