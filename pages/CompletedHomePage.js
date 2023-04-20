@@ -1,13 +1,14 @@
 import React,{useState} from "react";
-import { ScrollView, View, Text, StyleSheet} from "react-native";
+import { ScrollView, View, Text, StyleSheet, TouchableOpacity} from "react-native";
 import ReadyOrderCard from "../components/ReadyOrderCard";
 import SearchBar from '../components/SearchBar';
 import NavBar from '../components/NavBar';
 import Header from "../components/header";
 import ToggleSwitch from "toggle-switch-react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const CompletedHomePage=()=>{
-
+    const navigation = useNavigation();
     const [open, setOpen] = useState(true);
     const [label, setLabel] = useState("Open");
 
@@ -41,15 +42,15 @@ const CompletedHomePage=()=>{
 
                     <View style={styles.tabs}>
                         <ScrollView horizontal={true}>
-                            <View style={styles.tab1}>
+                            <TouchableOpacity style={styles.tab1} onPress={()=>{navigation.navigate("Pending");}}>
                                 <Text style={styles.tabtext2}>Pending Orders</Text>
-                            </View>
-                            <View style={styles.tab2}>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.tab2} onPress={()=>{navigation.navigate("Ready");}}>
                                 <Text style={styles.tabtext2}>Ready Orders</Text>
-                            </View>
-                            <View style={styles.tab3}>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.tab3} onPress={()=>{navigation.navigate("Completed");}}>
                                 <Text style={styles.tabtext1}>Completed Orders</Text>
-                            </View>
+                            </TouchableOpacity>
                         </ScrollView>
                     </View>
 
@@ -85,6 +86,8 @@ const styles = StyleSheet.create({
     up:{
         height:180,
         width:"100%",
+        flexDirection:"column",
+        alignItems:"center"
     },
     down:{
         height:"100%",

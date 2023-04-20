@@ -6,7 +6,6 @@ import Veg from '../assets/veg.svg';
 import NonVeg from '../assets/nonveg.svg';
 
 const ReadyOrderCard = props => {
-    
     return (
         <View style={styles.container}>
             <View style={styles.line1}>
@@ -16,7 +15,7 @@ const ReadyOrderCard = props => {
                 <Text style={styles.text2}> {props.orderTime} mins ago</Text>
                 </View>
                 <View>
-                    <TouchableOpacity>
+                    <TouchableOpacity >
                         <Dots/>
                     </TouchableOpacity>
                 </View> 
@@ -43,7 +42,7 @@ const ReadyOrderCard = props => {
             </View>
             <View style={styles.buttonbox}>
                     <TouchableOpacity>
-                        <Text style={styles.button}>Order Ready</Text>
+                        <Text style={styles.button}>Waiting for pickup</Text>
                     </TouchableOpacity>
             </View>
         </View>

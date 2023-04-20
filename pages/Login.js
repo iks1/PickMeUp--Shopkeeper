@@ -3,14 +3,14 @@ import Arrow from "../assets/leftArrow.svg";
 import RegisterButton from "../components/registerButton";
 import InputField from "../components/InputField";
 import Google from "../components/Google";
-
+import { useNavigation } from "@react-navigation/native";
 const SignUp = () => {
-    
+    const navigation = useNavigation();
     return (
         <View style={styles.main}>
             <View style={styles.container}>
                 <View style={styles.arrow}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>{navigation.navigate("GetStarted");}}>
                         <Arrow/>
                     </TouchableOpacity>
                 </View>
@@ -26,10 +26,14 @@ const SignUp = () => {
                     </TouchableOpacity>
                 </View>
                 
-                <View style={styles.input2}>   
-                    <RegisterButton text="Login"/>
+                <View style={styles.input2}>  
+                    <TouchableOpacity style={styles.wrapper} onPress={()=>{navigation.navigate("Pending");}}> 
+                        <RegisterButton text="Login"/>
+                    </TouchableOpacity>
                     <Text style={styles.or}>or</Text>
-                    <Google/>
+                    <TouchableOpacity style={styles.wrapper} onPress={()=>{navigation.navigate("Pending");}}>
+                        <Google/>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={styles.text}>
@@ -38,8 +42,7 @@ const SignUp = () => {
                         <Text style={styles.boldText}> Terms of Use </Text> 
                         and  
                         <Text style={styles.boldText}> Privacy Policy</Text>                  
-                    </Text>
-                    
+                    </Text>  
                 </View>
            </View>
         </View>
@@ -118,6 +121,12 @@ const styles = StyleSheet.create({
         color: "#6F6F6F",
         fontSize: 12,
         fontWeight: 400,
+    },
+    wrapper:{
+        width:"100%",
+        height:38,
+        flexDirection:"row",
+        justifyContent:"center"
     }
 });
 
