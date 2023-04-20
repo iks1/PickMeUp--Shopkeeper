@@ -23,17 +23,17 @@ const Last7Insights=()=>{
                 <View style={styles.down}>
                     
                     <View style={styles.tabs}>
-                        <ScrollView horizontal={true}>
-                            <TouchableOpacity style={styles.tab2} onPress={()=>{navigation.navigate("Insights")}}>
+                        
+                            <TouchableOpacity style={styles.tab1} onPress={()=>{navigation.navigate("Insights")}}>
                                 <Text style={styles.tabtext2}>Today</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.tab1} onPress={()=>{navigation.navigate("Insights7")}}>
+                            <TouchableOpacity style={styles.tab2} onPress={()=>{navigation.navigate("Insights7")}}>
                                 <Text style={styles.tabtext1}>Last 7 days</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.tab2} onPress={()=>{navigation.navigate("Insights30")}}>
+                            <TouchableOpacity style={styles.tab3} onPress={()=>{navigation.navigate("Insights30")}}>
                                 <Text style={styles.tabtext2}>Last 30 days</Text>
                             </TouchableOpacity>
-                        </ScrollView>
+                        
                     </View>
 
                     <InsightsCard date="1st june 2001" totalAmount="1000" received="12" accepted="2" cancelled="2" completed="90"/>
@@ -99,13 +99,16 @@ const styles = StyleSheet.create({
     },
     tabs:{
         marginTop: 32,
+        width: "90%",
+        alignSelf: 'center',
+        flexDirection:'row',
         marginLeft: "4%",
         marginRight: "4%",
-        flexDirection:'row',
+        justifyContent:'space-between',
     },
-    tab1:{
+    tab2:{
         height: 32,
-        width: 134,
+        width: 104,
         backgroundColor: "#5736B5",
         borderRadius: 16,
         marginLeft: 4,
@@ -118,9 +121,21 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: 500,
     },
-    tab2:{
+    tab1:{
         height: 32,
-        width: 134,
+        width: 71,
+        backgroundColor: "#EEEDFA",
+        borderRadius: 16,
+        borderColor: "#D7D2E9",
+        borderWidth: 1,
+        marginLeft: 4,
+        marginRight: 4,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    tab3:{
+        height: 32,
+        width: 113,
         backgroundColor: "#EEEDFA",
         borderRadius: 16,
         borderColor: "#D7D2E9",

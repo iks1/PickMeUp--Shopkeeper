@@ -48,7 +48,7 @@ const PendingHomePage=()=>{
                             <TouchableOpacity style={styles.tab2} onPress={()=>{navigation.navigate("Ready");}}>
                                 <Text style={styles.tabtext2}>Ready Orders</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.tab2} onPress={()=>{navigation.navigate("Completed");}}>
+                            <TouchableOpacity style={styles.tab3} onPress={()=>{navigation.navigate("Completed");}}>
                                 <Text style={styles.tabtext2}>Completed Orders</Text>
                             </TouchableOpacity>
                         </ScrollView>
@@ -57,7 +57,7 @@ const PendingHomePage=()=>{
                     <View style={styles.cards}>
                         
                     <PendingOrderCard orderNumber="1002" orderTime="17" bill="1000" list={[{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:0,num:2,item:"pizza",price:200}]}/>
-                    <PendingOrderCard orderNumber="1002" orderTime="17" bill="1000" list={[{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:0,num:2,item:"pizza",price:200}]}/>
+                    <PendingOrderCard orderNumber="1002" orderTime="17" bill="1000" list={[{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:0,num:2,item:"pizza",price:200}]}/>
                     <PendingOrderCard orderNumber="1002" orderTime="17" bill="1000" list={[{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:1,num:1,item:"maggi",price:20},{veg:0,num:2,item:"pizza",price:200}]}/>
                     
                     </View>
@@ -108,8 +108,6 @@ const styles = StyleSheet.create({
     },
     tabs:{
         marginTop: 12,
-        marginLeft: "4%",
-        marginRight: "4%",
         flexDirection:'row',
     },
     tab1:{
@@ -129,7 +127,19 @@ const styles = StyleSheet.create({
     },
     tab2:{
         height: 32,
-        width: 134,
+        width: 121,
+        backgroundColor: "#EEEDFA",
+        borderRadius: 16,
+        borderColor: "#D7D2E9",
+        borderWidth: 1,
+        marginLeft: 4,
+        marginRight: 4,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    tab3:{
+        height: 32,
+        width: 144,
         backgroundColor: "#EEEDFA",
         borderRadius: 16,
         borderColor: "#D7D2E9",
@@ -145,7 +155,7 @@ const styles = StyleSheet.create({
         fontWeight: 500,
     },
     cards:{
-        marginTop: 16,
+        marginTop: 20,
         marginBottom: 84,
         marginLeft: "2%",
         marginRight: "2%",

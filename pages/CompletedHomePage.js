@@ -42,13 +42,13 @@ const CompletedHomePage=()=>{
 
                     <View style={styles.tabs}>
                         <ScrollView horizontal={true}>
-                            <TouchableOpacity style={styles.tab2} onPress={()=>{navigation.navigate("Pending");}}>
+                            <TouchableOpacity style={styles.tab1} onPress={()=>{navigation.navigate("Pending");}}>
                                 <Text style={styles.tabtext2}>Pending Orders</Text>
                             </TouchableOpacity>
                             <TouchableOpacity style={styles.tab2} onPress={()=>{navigation.navigate("Ready");}}>
                                 <Text style={styles.tabtext2}>Ready Orders</Text>
                             </TouchableOpacity>
-                            <TouchableOpacity style={styles.tab1} onPress={()=>{navigation.navigate("Completed");}}>
+                            <TouchableOpacity style={styles.tab3} onPress={()=>{navigation.navigate("Completed");}}>
                                 <Text style={styles.tabtext1}>Completed Orders</Text>
                             </TouchableOpacity>
                         </ScrollView>
@@ -105,13 +105,11 @@ const styles = StyleSheet.create({
     },
     tabs:{
         marginTop: 12,
-        marginLeft: "4%",
-        marginRight: "4%",
         flexDirection:'row',
     },
-    tab1:{
+    tab3:{
         height: 32,
-        width: 134,
+        width: 144,
         backgroundColor: "#5736B5",
         borderRadius: 16,
         marginLeft: 4,
@@ -124,9 +122,21 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: 500,
     },
-    tab2:{
+    tab1:{
         height: 32,
         width: 134,
+        backgroundColor: "#EEEDFA",
+        borderRadius: 16,
+        borderColor: "#D7D2E9",
+        borderWidth: 1,
+        marginLeft: 4,
+        marginRight: 4,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    tab2:{
+        height: 32,
+        width: 121,
         backgroundColor: "#EEEDFA",
         borderRadius: 16,
         borderColor: "#D7D2E9",
@@ -142,7 +152,7 @@ const styles = StyleSheet.create({
         fontWeight: 500,
     },
     cards:{
-        marginTop: 16,
+        marginTop: 20,
         marginBottom: 84,
         marginLeft: "2%",
         marginRight: "2%",
