@@ -39,9 +39,6 @@ const Profile=()=>{
                     <View style={styles.card}>
                         <Detail phoneNo="+91 9876543210" location="5MQX+8W3, IIT Guwahati, Guwahati, Assam 781039"/>
                     </View>
-                    <View style={styles.card}>
-                        <Payment list={[{id:1,label:["Google Pay","rajinertia9239111@okhdfcbank"]},{id:2,label:["Google Pay","rajinertia9239111@okhdfcbank"]}]}/>
-                    </View>
                     <View style={styles.card2}>
                         <View style={styles.option}>
                             <View style={styles.option1}>
