@@ -16,6 +16,7 @@ import Insights30 from "./pages/Last30Insights"
 import Profile from "./pages/Profile"
 import Completed from './pages/CompletedHomePage';
 import Insights from "./pages/TodayInsights"
+import MenuPage from "./pages/MenuPage"
 
 
 
@@ -38,6 +39,7 @@ export default function App() {
         <Stack.Screen name="Insights7" component={Insights7}/>
         <Stack.Screen name="Insights30" component={Insights30}/>
         <Stack.Screen name="Insights" component={Insights}/>
+        <Stack.Screen name="Menu" component={MenuPage}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

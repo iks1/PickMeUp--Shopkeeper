@@ -19,6 +19,7 @@ import Dots from "../assets/dots";
 const Menu = () => {
   const navigation = useNavigation();
   const [outOfStock, setOutOfStock] = useState(true);
+  const [vis,setVis] = useState(false);
   const label = "Out of stock";
   const arr = [
     {
@@ -88,18 +89,13 @@ const Menu = () => {
           <FoodItemCard heading="Chicken Tikka" Price="250" veg={false}  image={chickenImage} inStock={true} vis={outOfStock}/>
         </View>
       </ScrollView>
-      <View style={styles.popup}>
-        <TouchableOpacity style={styles.btn1}>
-          <View >
-                <Text style={styles.text1}>Rearrange</Text>
-          </View>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn2}>
+      {vis ? (<PopUp/>):(<View style={styles.popup}>
+        <TouchableOpacity style={styles.btn2} onPress={()=>{setVis(!vis)}}>
           <View>
                 <Text style={styles.text2}>Add +</Text>
           </View>
         </TouchableOpacity>
-      </View>
+      </View>)}
         <View style={styles.navbar}>
                 <NavBar active="Menu"/>
         </View>
@@ -274,7 +270,7 @@ main:{
     backgroundColor: "#FFFFFF",
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between",
+    justifyContent: "center",
     paddingHorizontal: "4.5%",
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
@@ -304,7 +300,7 @@ main:{
   btn2: {
     backgroundColor: "#5736B5",
     borderRadius: 20,
-    width: "47%",
+    width: "90%",
     height: 38,
     alignItems: "center",
     justifyContent: "center",
