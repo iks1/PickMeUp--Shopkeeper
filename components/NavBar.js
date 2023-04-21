@@ -28,8 +28,11 @@ const NavBar = (props) => {
         </TouchableOpacity>
   
         <TouchableOpacity
-          
+          onPress={() => {
+            navigation.navigate("Menu");
+          }}
           style={styles.tab}
+
         >
           {props.active === "Menu" ? <MenuIconActive /> : <MenuIcon />}
   
