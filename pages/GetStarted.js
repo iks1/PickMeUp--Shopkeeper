@@ -1,6 +1,7 @@
 import React from "react";
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
-import ProfileEllipse from '../assets/profileEllipse.svg'
+import {View, Text, TouchableOpacity, StyleSheet, Image} from 'react-native';
+// import Logo from '../assets/logo.png'
+import Logo from '../assets/logo.svg'
 
 import { useNavigation } from "@react-navigation/native";
 const Start=()=>{
@@ -9,7 +10,8 @@ const Start=()=>{
         <View style={styles.mainContainer}>
             
             <View style={styles.up}>
-                <ProfileEllipse/>
+                    <Logo />
+                    {/* <Image source={Logo} style={styles.logo}/> */}
                 <Text style={styles.Tex2}>Ordering on Campus made easier than ever</Text>
             </View>
             <View style={styles.down}>
@@ -50,6 +52,10 @@ const styles=StyleSheet.create({
         justifyContent:"center",
         alignItems:'center'
     },
+    // logo:{
+    //     width:"40%",
+    //     height: "27.2%",
+    // },
     but:{
         width:'90%',
         height:38,
@@ -78,6 +84,6 @@ const styles=StyleSheet.create({
         color:'white',
         width:'70%',
         textAlign:'center',
-        marginTop:36
+        marginTop:53,
     }
 })

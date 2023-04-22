@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { View, TouchableOpacity, StyleSheet, Text } from 'react-native';
 import Line from '../assets/horizontalLine.svg';
 import Veg from '../assets/veg.svg';
@@ -7,6 +7,18 @@ import DurationChangeButton from './durationChangeButton';
 import TimerButton from './timerButton';
 
 const IncomingOrderCard = props => {
+    const [index,setIndex]=useState(0);
+  
+    useEffect(() => {
+        const interval = setInterval(() => {
+        setIndex((index+1)%(120 + 1))
+        },1000)
+
+        return () => {
+        clearInterval(interval);
+        }
+    },[index])
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -47,15 +59,7 @@ const IncomingOrderCard = props => {
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button2}>
-                     <View style={{flexDirection: 'row'}}>
-                            <Text style={styles.text6}>
-                                Accept
-                            </Text>
-                            <Text style={styles.text7}>
-                                0:59
-                            </Text>
-                    </View> 
-                    {/* <TimerButton/> */}
+                    <TimerButton step={index} steps={120} />
                 </TouchableOpacity>
             </View>    
         </View>
@@ -69,7 +73,7 @@ const styles = StyleSheet.create({
         width: "100%",
         flexDirection: 'column',
         borderRadius: 16,
-        paddingBottom: 22,
+        paddingBottom: 20,
     },
     header: {
         height: 80,
@@ -147,7 +151,6 @@ const styles = StyleSheet.create({
         paddingLeft: 16,
         paddingRight: 16,
         paddingTop: 24,
-        paddingBottom: 22,
     },
     button1: {
         backgroundColor: "#EEEDFA",
@@ -160,17 +163,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         paddingRight: 5,
     },
-    // button2: {
-    //     backgroundColor: "#5736B5",
-    //     height: 38,
-    //     width: "58%",
-    //     borderRadius: 20,
-    //     justifyContent: 'center',
-    //     alignItems: 'center',
-    //     flexDirection: 'row',
-    // },
     button2: {
-        backgroundColor: "#5736B5",
         height: 38,
         width: "58%",
         borderRadius: 20,
