@@ -16,11 +16,11 @@ const DurationChangeButton = props => {
 
     return (
         <View style={styles.button1}>
-            <TouchableOpacity onPress={handleSubtract}>
+            <TouchableOpacity onPress={handleSubtract} style={styles.touch}>
                 <Minus/>
             </TouchableOpacity>
             <Text style={styles.text1}> {num} minutes </Text>
-            <TouchableOpacity onPress={handleAdd}>
+            <TouchableOpacity onPress={handleAdd} style={styles.touch}>
                 <Plus/>
             </TouchableOpacity>
         </View>
@@ -40,6 +40,12 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         paddingLeft: 16,
         paddingRight: 16,
+    },
+    touch:{
+        width: "15%",
+        height:"100%",
+        alignItems:"center",
+        justifyContent:"center",
     },
     text1: {
         color: "#000000",
