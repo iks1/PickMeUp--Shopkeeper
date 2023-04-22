@@ -1,20 +1,21 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-
+import { useNavigation } from "@react-navigation/core";
 const PopUp = () => {
+    const navigation = useNavigation();
     return (
         <View style={styles.main}>
-            <TouchableOpacity style={styles.btn1}>
+            <TouchableOpacity style={styles.btn1} onPress={()=>{navigation.navigate("Category")}}>
                 <View>
                     <Text style={styles.text}>Add category +</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btn1}>
+            <TouchableOpacity style={styles.btn1} onPress={()=>{navigation.navigate("Subcategory")}}>
                 <View>
                     <Text style={styles.text}>Add sub category +</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btn2}>
+            <TouchableOpacity style={styles.btn2} onPress={()=>{navigation.navigate("AddItem")}}>
                 <View>
                     <Text style={styles.text2}>Add item +</Text>
                 </View>

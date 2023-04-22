@@ -4,8 +4,9 @@ import NavBar from "../components/NavBar";
 import Arrow from "../assets/leftArrow.svg";
 import Line from "../assets/horizontalLine.svg";
 import { RadioButton } from 'react-native-paper';
-
+import { useNavigation } from "@react-navigation/core";
 const SubCategory = () => {
+    const navigation = useNavigation(); 
     const [selectedOption, setSelectedOption] = useState(null);
     const handleOptionSelect = (value) => {
         setSelectedOption(value);
@@ -15,7 +16,7 @@ const SubCategory = () => {
     <View style={styles.mainContainer}>
       <ScrollView style={styles.main}>
         <View style={styles.up}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>{navigation.goBack()}}>
                 <Arrow />
             </TouchableOpacity>
         </View>
@@ -76,7 +77,7 @@ const SubCategory = () => {
                 </View>
             </View>
         </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate("AddItem")}}>
             <View>
                 <Text style={styles.buttonText}>Proceed</Text>
             </View>
