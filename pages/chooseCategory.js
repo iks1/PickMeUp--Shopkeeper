@@ -4,8 +4,10 @@ import NavBar from "../components/NavBar";
 import Arrow from "../assets/leftArrow.svg";
 import Line from "../assets/horizontalLine.svg";
 import Tick from "../assets/tick.svg";
+import { useNavigation } from "@react-navigation/native";
 
 const Category = () => {
+    const navigation = useNavigation();
     const [checked1, setChecked1] = useState(false);
     const [checked2, setChecked2] = useState(false);
     const [checked3, setChecked3] = useState(false);
@@ -136,16 +138,16 @@ const Category = () => {
                 </TouchableOpacity> 
             </View>
         </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={()=>{navigation.navigate("AddItem");}}>
             <View>
                 <Text style={styles.buttonText}>Proceed</Text>
             </View>
         </TouchableOpacity>
       </ScrollView>
       
-        {/* <View style={styles.navbar}>
+        <View style={styles.navbar}>
                 <NavBar active="Menu"/>
-        </View> */}
+        </View>
     </View>
   );
 };
