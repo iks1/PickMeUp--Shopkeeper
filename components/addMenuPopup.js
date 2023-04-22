@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/core";
+import { useNavigation } from "@react-navigation/native";
+
 const PopUp = () => {
     const navigation = useNavigation();
     return (
@@ -15,7 +16,7 @@ const PopUp = () => {
                     <Text style={styles.text}>Add sub category +</Text>
                 </View>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.btn2} onPress={()=>{navigation.navigate("AddItem")}}>
+            <TouchableOpacity style={styles.btn2} onPress={()=>{navigation.navigate("AddItem");}}>
                 <View>
                     <Text style={styles.text2}>Add item +</Text>
                 </View>

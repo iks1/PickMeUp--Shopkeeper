@@ -4,7 +4,8 @@ import NavBar from "../components/NavBar";
 import Arrow from "../assets/leftArrow.svg";
 import Line from "../assets/horizontalLine.svg";
 import { RadioButton } from 'react-native-paper';
-import { useNavigation } from "@react-navigation/core";
+import { useNavigation } from "@react-navigation/native";
+
 const SubCategory = () => {
     const navigation = useNavigation(); 
     const [selectedOption, setSelectedOption] = useState(null);
@@ -84,9 +85,9 @@ const SubCategory = () => {
         </TouchableOpacity>
       </ScrollView>
       
-        {/* <View style={styles.navbar}>
+        <View style={styles.navbar}>
                 <NavBar active="Menu"/>
-        </View> */}
+        </View>
     </View>
   );
 };
