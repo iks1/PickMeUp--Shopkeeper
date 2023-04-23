@@ -4,8 +4,8 @@ import PendingOrderCard from "../components/PendingOrderCard";
 import SearchBar from '../components/SearchBar';
 import NavBar from '../components/NavBar';
 import Header from "../components/header";
-//import ToggleSwitch from "toggle-switch-react-native";
-import ToggleSwitch from "rn-toggle-switch";
+import ToggleSwitch from "toggle-switch-react-native";
+// import ToggleSwitch from "rn-toggle-switch";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 const PendingHomePage=()=>{
@@ -24,7 +24,7 @@ const PendingHomePage=()=>{
 
                 <View style={styles.down}>
                     <View style={styles.open}>
-                        {/* <ToggleSwitch
+                        <ToggleSwitch
                             isOn={open}
                             onColor="green"
                             offColor="white"
@@ -38,20 +38,7 @@ const PendingHomePage=()=>{
                                 setOpen(!open);
                                 setLabel(open ? "Closed" : "Open");
                             }}
-                        /> */}
-
-                         <ToggleSwitch
-                           text={{on: 'OPEN', off: 'CLOSED', activeTextColor: 'white', inactiveTextColor: '#B7B8BA'}}
-                           textStyle={{fontWeight: 'bold'}}
-                           color={{ indicator: 'white', active: '#45BD58', inactive:  'rgba( 247, 247, 247, 1)', activeBorder: '#41B4A4', inactiveBorder: '#E9E9E9'}}
-                           active={true}
-                           disabled={false}
-                           width={108}
-                            radius={12}
-                          onValueChange={(val) => {
-                                 /* your handler function... */
-                              }}
-                           />
+                        />
                     </View>
 
                     <View style={styles.tabs}>
@@ -114,7 +101,7 @@ const styles = StyleSheet.create({
         flexDirection:'column',
     },
     open: {
-        marginLeft: "1%",
+        marginLeft: "4%",
         marginTop: 24,
         display: "flex",
         flexDirection: "row",
