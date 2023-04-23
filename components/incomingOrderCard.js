@@ -7,7 +7,7 @@ import DurationChangeButton from './durationChangeButton';
 import TimerButton from './timerButton';
 
 const IncomingOrderCard = props => {
-    const [index,setIndex]=useState(0);
+    const [index,setIndex]=useState(props.over);
   
     useEffect(() => {
         const interval = setInterval(() => {
